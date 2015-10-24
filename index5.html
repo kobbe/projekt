@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Hans Koberg CV och projekt" />
+	<!--<meta name="keywords" content="your,keywords,goes,here" />-->
+	<meta name="author" content="Hans Koberg" />
+	<link rel="stylesheet" type="text/css" href="variant-duo.css" title="Variant Duo" media="screen,projection" />
+	<title>Hans Koberg</title>
+</head>
+
+<body>
+<div id="wrap">
+	<h1><a href="index.html">CV och Projekt</a></h1>
+	<p class="slogan">av Hans Koberg</p>
+		
+	<div id="menu">
+		<p class="menulinks">
+		<strong class="hide">Main menu:</strong>
+		<a class="menulink" href="index.html">CV</a><span class="hide"> | </span>
+		<a class="menulink" href="index2.html">Kassa</a><span class="hide"> | </span>
+		<a class="menulink" href="index3.html">Radon</a><span class="hide"> | </span>
+		<a class="menulink" href="index4.html">DörrGraf</a><span class="hide"> | </span>
+		<a class="menulink active" href="index5.html">Kalender och sms</a>
+	</p>
+	</div>
+	
+	<img class="feature" src="sample1.jpg" width="980" height="200" alt="sample image" />
+	
+	<div id="content">
+		<div class="left">
+			<h2>Kalender <a href="kalender.py">(källkod)</a></h2>
+            <p>
+            Prenumenerar man på en kalender i google kalender så kan man varken redigera eller ta bort
+            händelser eftersom att man inte äger kalendern man prenumererar på själv. 
+            Detta medför att kalendern blir överfull av händelser som man inte kan ta bort eller dölja.
+            </p>
+            <p>
+            För att komma runt detta problem har jag skrivit ett program som med hjälp av 
+            googles kalender-API kopierar alla mina kalendrar och prenumerationer till en ny kalender
+            där jag faktiskt kan ändra och ta bort alla händelser.
+            </p>
+            <p>
+            Tyvärr är inte googles API dokumentation den bästa och jag lade ner projektet på grund av
+            buggar och andra problem.
+            </p>
+        </div>
+
+		<div class="right">
+			<h2>SMS <a href="sms.py">(källkod)</a></h2>
+			<p>Google kalender stödde sms notifikationer av händelser till Augusti 2015. 
+               Innan dess kunde man genom kalender-APIet skapa händelser med sluttid om 1 minut och
+               på så sett får ett sms när händelsen började med valfri text. På det viset kunde min server tala om
+               när den gick ner, startade upp, osv.. </p>
+			
+		</div>
+		<hr class="clear" />
+	</div>
+	<p class="footer">Copyright &copy; 2015 Hans Koberg<br />
+		Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a><br />
+	</p>
+
+</div>
+</body>
+</html>

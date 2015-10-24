@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Hans Koberg CV och projekt" />
+	<!--<meta name="keywords" content="your,keywords,goes,here" />-->
+	<meta name="author" content="Hans Koberg" />
+	<link rel="stylesheet" type="text/css" href="variant-duo.css" title="Variant Duo" media="screen,projection" />
+	<title>Hans Koberg</title>
+</head>
+
+<body>
+<div id="wrap">
+	<h1><a href="index.html">CV och Projekt</a></h1>
+	<p class="slogan">av Hans Koberg</p>
+		
+	<div id="menu">
+		<p class="menulinks">
+		<strong class="hide">Main menu:</strong>
+		<a class="menulink" href="index.html">CV</a><span class="hide"> | </span>
+		<a class="menulink active" href="index2.html">Kassa</a><span class="hide"> | </span>
+		<a class="menulink" href="index3.html">Radon</a><span class="hide"> | </span>
+		<a class="menulink" href="index4.html">DörrGraf</a><span class="hide"> | </span>
+		<a class="menulink" href="index5.html">Kalender och sms</a>
+	</p>
+	</div>
+	
+	<img class="feature" src="sample1.jpg" width="980" height="200" alt="sample image" />
+	
+	<div id="content">
+		<div class="left">
+			<h2>Kassasystem <a href="kassa.py">(källkod)</a></h2>
+			<p>Det absolut största projektet som jag skrivit är ett kassasystem för en studentförening 
+               som behövde bättre koll på sin försäljning i sin kiosk. 
+               Kassan är skriven helt från grunden av enbart mig och är ca 2000 rader kod. 
+               Den har körts kontinuerligt i ca 2 år utan några större problem eftersom att driftsäkerhet är väldigt viktigt.
+            </p>
+            <p>
+            Kassan är skriven i python med Tkinter som gränssnitt och sqlite3 som databas eftersom ett av målen 
+            med kassan är att den ska vara så enkel som möjlig och så lätt att underhålla som möjligt. Jag brukar uppgradera
+            kassan lite då och då med nya funktioner.
+            </p>
+            <p>
+            Eftersom att kassan används av många nya personer så var användarvänlighet och enkelhet väldigt viktigt 
+            i designen av kassan. Gränssnittet är fokuserat på enkelhet för lätt upplärning och minimering av
+            felkällor. Om något går fel så uppmärksammas användaren på felet.
+            </p>
+			<!--<p> hur länge kört osv </p>
+            bild på error som bilnkar för att det är exaktra vikigt i och med att operatören inte alltid kollar på skärmen.-->
+            <a href="error.png"><img style="width:100%;height:100%;" src="error.png" alt="Felmedelanden"> </a>
+            <p>Skärmen blinkar när ett felmeddelande visas för att uppkalla användarens uppmärksamhet eftersom
+               att användarna inte alltid kollar på skärmen när produkter skannas.</p>
+        
+            <a href="stats.png"><img style="width:100%;height:100%;" src="stats.png" alt="Information om köp"> </a>
+            <p>Hämta information om köp, sålda varor, totalsummsa osv.</p>
+        </div>
+
+		<div class="right">
+			
+			<a href="kassa.png"><img style="width:100%;height:100%;" src="kassa.png" alt="Huvudskärm"> </a>
+            <p>Huvudskärmen för kassan.</p>
+			<a href="admin.png"><img style="width:100%;height:100%;" src="admin.png" alt="Modifiera produkter"> </a>
+            <p>Modifikation (lägg till/ta bort/ändra) av produkter.</p>
+            <a href="datamining.png"><img style="width:100%;height:100%;" src="datamining.png" alt="Statestik"> </a>
+            <p>Sida för att få statestik.</p>
+		</div>
+		<hr class="clear" />
+	</div>
+	<p class="footer">Copyright &copy; 2015 Hans Koberg<br />
+		Template design by <a href="http://andreasviklund.com/">Andreas Viklund</a><br />
+	</p>
+
+</div>
+</body>
+</html>
