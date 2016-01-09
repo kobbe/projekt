@@ -16,7 +16,7 @@ where <timestamp> is the Unix time corresponding to the logged value
 and <value> is given in Bq/m^3.
 """
 
-import numpy as np
+
 # Change backend before importing pyplot in order
 # to run the script without a running X server.
 import matplotlib
@@ -26,15 +26,35 @@ import matplotlib.dates as dat
 import matplotlib.dates as mdates
 import argparse
 import datetime
-import pylab
 import re
+import logging
 reg = re.compile('^[0-9]* [0-9]{1,4}$')
 
-if __name__ == "__main__":
+LOG_FILE = "/var/log/radongraph.log"
+
+
+#To make sure that some of the arguments are positive.
+def positive_int(val):
+    try:
+        assert(int(val) > 0)
+    except:
+        raise ArgumentTypeError("'%s' is not a valid positive int" % val)
+    return int(val)
+
+    
+def logger_setup():
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s %(levelname)-8s %(message)s",
+                        datefmt="%Y-%m-%d %H:%M:%S",
+                        filename=LOG_FILE,
+                        filemode="a")
+
+
+def main():
     # Do stuff
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--timespan", dest='timeSpan', help="The last number of hours to display", type=int)
-    parser.add_argument("-o", "--output", help="output file to write picture to")
+    parser.add_argument("-t", "--timespan", dest='timeSpan', help="The last number of hours to display", type=positive_int,required=True)
+    parser.add_argument("-o", "--output", help="output file to write picture to",required=True)
     parser.add_argument("file", help="Input file")
     args = parser.parse_args()
     endTime = datetime.datetime.now().replace(minute=0,second=0,microsecond=0)
@@ -77,3 +97,12 @@ if __name__ == "__main__":
     plt.ylim(ymin=0, ymax=plt.gca().get_ylim()[1]*1.1)
 
     plt.savefig(args.output)
+
+if __name__ == "__main__":
+    logger_setup()
+    try:
+        logging.info("Starting program")
+        main()
+    except Exception as e:
+        logging.exception(e)
+        raise # Throw the same exception again such that a user can watch it
